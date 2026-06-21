@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admission Form</title>
+
+<link rel="stylesheet" href="admission.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Summit International School</h1>
+    <p>Admission Form 2026</p>
+</header>
+
+<!-- ================= FORM ================= -->
+
+<section class="form-section">
+
+<form id="admissionForm">
+
+    <input type="text" id="name" placeholder="Student Name" required>
+    <input type="number" id="age" placeholder="Age" required>
+    <input type="email" id="email" placeholder="Email" required>
+    <input type="text" id="father" placeholder="Father Name" required>
+
+    <input type="text" id="bform" placeholder="B-Form / CNIC Number" required>
+
+    <input type="text" id="class" placeholder="Applying Class" required>
+
+    <input type="text" id="subjects" placeholder="Favorite Subjects (Math, Science...)" required>
+
+    <input type="text" id="interest" placeholder="Interests / Hobbies" required>
+
+    <textarea id="academic" placeholder="Previous Academic Details" required></textarea>
+
+    <textarea id="address" placeholder="Address" required></textarea>
+
+    <button type="submit">Generate Admission Letter</button>
+
+</form>
+
+</section>
+
+<!-- ================= LETTER ================= -->
+
+<section class="letter-section" id="letterSection">
+
+    <div id="letter">
+
+        <h2>Admission Letter</h2>
+
+        <p id="letterText"></p>
+
+        <!-- STATUS BUTTON -->
+        <button class="status-btn" id="statusBtn">
+            Status: Received
+        </button>
+
+    </div>
+
+    <div class="buttons">
+
+        <button onclick="sendForm()">Send</button>
+
+        <button onclick="downloadLetter()">Download</button>
+
+        <button onclick="changeStatus()">Check Status</button>
+
+    </div>
+
+    <!-- HELPLINE -->
+    <div class="help-box">
+
+        <h3>Need Help?</h3>
+
+        <p>Email: admissions@summitschool.edu</p>
+        <p>Helpline: +92 300 1234567</p>
+
+    </div>
+
+</section>
+
+<script src="admission.js"></script>
+
+</body>
+</html>
