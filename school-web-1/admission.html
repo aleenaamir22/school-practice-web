@@ -4,19 +4,40 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Admission Form</title>
-
 <link rel="stylesheet" href="admission.css">
 </head>
 
 <body>
 
-<header>
-    <h1>Summit International School</h1>
-    <p>Admission Form 2026</p>
+<!-- ================= NAVBAR ================= -->
+<nav class="navbar">
+
+    <div class="logo">
+        Summit International School
+    </div>
+
+    <ul class="nav-links" id="navLinks">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="academic.html">Academics</a></li>
+        <li><a href="admission.html">Admissions</a></li>
+        <li><a href="jobs.html">Jobs</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+    <div class="hamburger" id="hamburger">
+        ☰
+    </div>
+
+</nav>
+
+<!-- ================= HEADER ================= -->
+<header class="header">
+    <h1>Admission Portal</h1>
+    <p>Summit International School 2026</p>
 </header>
 
 <!-- ================= FORM ================= -->
-
 <section class="form-section">
 
 <form id="admissionForm">
@@ -25,59 +46,44 @@
     <input type="number" id="age" placeholder="Age" required>
     <input type="email" id="email" placeholder="Email" required>
     <input type="text" id="father" placeholder="Father Name" required>
-
-    <input type="text" id="bform" placeholder="B-Form / CNIC Number" required>
-
     <input type="text" id="class" placeholder="Applying Class" required>
-
-    <input type="text" id="subjects" placeholder="Favorite Subjects (Math, Science...)" required>
-
-    <input type="text" id="interest" placeholder="Interests / Hobbies" required>
-
-    <textarea id="academic" placeholder="Previous Academic Details" required></textarea>
 
     <textarea id="address" placeholder="Address" required></textarea>
 
-    <button type="submit">Generate Admission Letter</button>
+    <button type="submit">Generate Application</button>
 
 </form>
 
 </section>
 
-<!-- ================= LETTER ================= -->
+<!-- ================= RESULT ================= -->
+<section class="result-section" id="resultSection" style="display:none;">
 
-<section class="letter-section" id="letterSection">
+    <div class="card">
 
-    <div id="letter">
+        <h2>Admission Application</h2>
 
-        <h2>Admission Letter</h2>
+        <p id="appMessage"></p>
 
-        <p id="letterText"></p>
-
-        <!-- STATUS BUTTON -->
-        <button class="status-btn" id="statusBtn">
-            Status: Received
-        </button>
+        <button id="proceedBtn">PROCEED</button>
 
     </div>
 
-    <div class="buttons">
+</section>
 
-        <button onclick="sendForm()">Send</button>
+<!-- ================= FINAL ================= -->
+<section class="final-section" id="finalSection" style="display:none;">
 
-        <button onclick="downloadLetter()">Download</button>
+    <div class="card yellow">
 
-        <button onclick="changeStatus()">Check Status</button>
+        <h2>Interview Details</h2>
 
-    </div>
-
-    <!-- HELPLINE -->
-    <div class="help-box">
-
-        <h3>Need Help?</h3>
-
-        <p>Email: admissions@summitschool.edu</p>
-        <p>Helpline: +92 300 1234567</p>
+        <p>
+            📍 Venue: Summit International School Campus<br>
+            📅 Date: 10 July 2026<br>
+            ⏰ Time: 10:00 AM<br>
+            📆 Day: Friday
+        </p>
 
     </div>
 

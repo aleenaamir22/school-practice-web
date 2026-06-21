@@ -1,10 +1,10 @@
-const form = document.getElementById("admissionForm");
-const letterSection = document.getElementById("letterSection");
-const letterText = document.getElementById("letterText");
-const statusBtn = document.getElementById("statusBtn");
+// ================= FORM LOGIC =================
 
-let statusIndex = 0;
-const statuses = ["Received", "Under Verification", "Accepted"];
+const form = document.getElementById("admissionForm");
+const resultSection = document.getElementById("resultSection");
+const finalSection = document.getElementById("finalSection");
+const appMessage = document.getElementById("appMessage");
+const proceedBtn = document.getElementById("proceedBtn");
 
 form.addEventListener("submit", function(e){
     e.preventDefault();
@@ -13,74 +13,46 @@ form.addEventListener("submit", function(e){
     const age = document.getElementById("age").value;
     const email = document.getElementById("email").value;
     const father = document.getElementById("father").value;
-    const bform = document.getElementById("bform").value;
     const className = document.getElementById("class").value;
-    const subjects = document.getElementById("subjects").value;
-    const interest = document.getElementById("interest").value;
-    const academic = document.getElementById("academic").value;
     const address = document.getElementById("address").value;
 
-    const letter = `
-Dear ${name},
+    appMessage.innerHTML = `
+    We have successfully combined all your submitted details.<br><br>
+    Please check carefully before proceeding.<br><br>
 
-We have successfully received your admission information.
+    <b>Student Name:</b> ${name}<br>
+    <b>Age:</b> ${age}<br>
+    <b>Email:</b> ${email}<br>
+    <b>Father Name:</b> ${father}<br>
+    <b>Class:</b> ${className}<br>
+    <b>Address:</b> ${address}<br><br>
 
-Please press the SEND button to move forward in the admission process.
+    Click PROCEED to continue admission process.
+    `;
 
-We will get back to you once we verify your information.
-
-Kindly stay connected with the school administration for updates.
-
----
-
-STUDENT DETAILS:
-Name: ${name}
-Age: ${age}
-Father Name: ${father}
-Email: ${email}
-B-Form/CNIC: ${bform}
-Class: ${className}
-Favorite Subjects: ${subjects}
-Interests: ${interest}
-Academic Details: ${academic}
-Address: ${address}
-
----
-
-Summit International School Admissions Office
-`;
-
-    letterText.innerText = letter;
-    letterSection.style.display = "block";
+    resultSection.style.display = "block";
 });
 
-/* SEND BUTTON */
-function sendForm(){
-    alert("Application sent successfully! We will contact you soon.");
-}
+// ================= PROCEED BUTTON =================
 
-/* DOWNLOAD LETTER */
-function downloadLetter(){
-    const text = document.getElementById("letter").innerText;
-    const blob = new Blob([text], {type:"text/plain"});
-    const link = document.createElement("a");
+proceedBtn.addEventListener("click", function(){
 
-    link.href = URL.createObjectURL(blob);
-    link.download = "Admission_Letter.txt";
+    finalSection.style.display = "block";
 
-    link.click();
-}
+    finalSection.scrollIntoView({
+        behavior:"smooth"
+    });
+});
 
-/* STATUS BUTTON */
-function changeStatus(){
+// ================= HAMBURGER MENU =================
 
-    statusIndex = (statusIndex + 1) % statuses.length;
+const hamburger = document.getElementById("hamburger");
+const navLinks = document.getElementById("navLinks");
 
-    statusBtn.innerText = "Status: " + statuses[statusIndex];
+hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
 
-    statusBtn.className = "status-btn " + (
-        statusIndex === 0 ? "received" :
-        statusIndex === 1 ? "under" :
-        "accepted"
-    );
-}
+    hamburger.innerHTML = navLinks.classList.contains("active")
+        ? "✕"
+        : "☰";
+});

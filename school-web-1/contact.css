@@ -10,6 +10,8 @@ body{
     color:#333;
 }
 
+/* ================= NAVBAR ================= */
+
 header{
     position:fixed;
     top:0;
@@ -18,253 +20,176 @@ header{
 }
 
 .navbar{
-
     height:80px;
-
     display:flex;
-
     justify-content:space-between;
-
     align-items:center;
-
     padding:0 8%;
-
     background:rgba(255,255,255,.85);
-
     backdrop-filter:blur(15px);
-
     box-shadow:0 10px 25px rgba(0,0,0,.08);
-
 }
 
 .logo{
-
     font-size:1.4rem;
-
     font-weight:bold;
-
     color:#1E40AF;
-
 }
 
 .nav-links{
-
     display:flex;
-
     list-style:none;
-
     gap:35px;
-
 }
 
 .nav-links a{
-
     text-decoration:none;
-
     color:#444;
-
     transition:.3s;
-
 }
 
 .nav-links a:hover{
-
     color:#2563EB;
-
 }
 
 .hamburger{
-
     display:none;
-
     font-size:30px;
-
     cursor:pointer;
-
 }
 
-/* Hero */
+/* ================= HERO ================= */
 
 .contact-hero{
-
     padding:170px 20px 90px;
-
     text-align:center;
-
     background:linear-gradient(135deg,#2563EB,#1E40AF);
-
     color:white;
-
 }
 
 .contact-hero h1{
-
     font-size:3rem;
-
     margin-bottom:20px;
-
 }
 
 .contact-hero p{
-
     max-width:700px;
-
     margin:auto;
-
     line-height:1.8;
-
     font-size:1.1rem;
-
 }
 
-/* Contact Section */
+/* ================= CONTACT ================= */
 
 .contact-container{
-
     width:90%;
-
     max-width:1200px;
-
     margin:80px auto;
-
     display:grid;
-
     grid-template-columns:1fr 1fr;
-
     gap:50px;
-
 }
 
 .contact-info,
 .contact-form{
-
     background:white;
-
     padding:40px;
-
     border-radius:18px;
-
     box-shadow:0 20px 40px rgba(0,0,0,.08);
-
+    border: 2px solid gold;
+    border-top:5px solid gold;
 }
 
 .contact-info h2,
 .contact-form h2{
-
     color:#1E40AF;
-
     margin-bottom:25px;
-
 }
 
 .contact-info p{
-
     margin-bottom:22px;
-
     line-height:1.8;
-
 }
 
+/* FORM */
+
 .contact-form form{
-
     display:flex;
-
     flex-direction:column;
-
     gap:18px;
-
 }
 
 .contact-form input,
 .contact-form textarea{
-
     padding:15px;
-
     border:1px solid #d6e2ff;
-
     border-radius:10px;
-
     outline:none;
-
     font-size:1rem;
-
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus{
-
     border-color:#2563EB;
-
 }
 
+/* BUTTON */
+
 .contact-form button{
-
     padding:15px;
-
     border:none;
-
-    background:#2563EB;
-
+    background:rgb(50, 56, 108);
     color:white;
-
     border-radius:10px;
-
     cursor:pointer;
-
     font-size:1rem;
-
     transition:.3s;
-
 }
 
 .contact-form button:hover{
-
     background:#1E40AF;
-
     transform:translateY(-3px);
-
 }
 
-/* Footer */
+/* ================= FOOTER ================= */
 
 footer{
-
     background:#1E40AF;
-
     color:white;
-
     text-align:center;
-
     padding:35px 20px;
-
 }
 
 footer p{
-
     margin:8px 0;
-
 }
 
-/* Mobile */
+/* ================= MOBILE ================= */
 
 @media(max-width:900px){
 
-.contact-container{
+    .contact-container{
+        grid-template-columns:1fr;
+    }
 
-grid-template-columns:1fr;
+    .hamburger{
+        display:block;
+    }
 
-}
+    .nav-links{
+        display:none;
+        position:absolute;
+        top:80px;
+        left:0;
+        width:100%;
+        background:white;
+        flex-direction:column;
+        gap:20px;
+        padding:20px 0;
+        text-align:center;
+    }
 
-.nav-links{
-
-display:none;
-
-}
-
-.hamburger{
-
-display:block;
-
-}
-
+    .nav-links.active{
+        display:flex;
+    }
 }
