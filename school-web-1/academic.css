@@ -1,3 +1,7 @@
+/* ==========================
+        RESET
+========================== */
+
 *{
     margin:0;
     padding:0;
@@ -5,11 +9,20 @@
     font-family:Arial, sans-serif;
 }
 
-body{
-    background:#f5f9ff;
+html{
+    scroll-behavior:smooth;
 }
 
-/*NAVBAR */
+body{
+    background:#f5f9ff;
+    color:#333;
+    overflow-x:hidden;
+}
+
+/* ==========================
+        NAVBAR
+========================== */
+
 header{
     position:fixed;
     top:0;
@@ -19,39 +32,37 @@ header{
 }
 
 .navbar{
-    width:100%;
     height:80px;
     display:flex;
     justify-content:space-between;
     align-items:center;
     padding:0 8%;
-    background:rgba(255,255,255,.75);
-    backdrop-filter:blur(16px);
-    border-bottom:1px solid rgba(37,99,235,.12);
-    box-shadow:0 10px 30px rgba(0,0,0,.06);
+    background:rgba(255,255,255,.92);
+    backdrop-filter:blur(14px);
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
 }
 
 .logo{
-    font-size:1.4rem;
-    font-weight:600;
-    color:#1d4ed8;
+    font-size:1.5rem;
+    font-weight:bold;
+    color:#1E40AF;
 }
 
 .nav-links{
     display:flex;
-    gap:35px;
     list-style:none;
+    gap:35px;
 }
 
 .nav-links a{
     text-decoration:none;
-    color:#374151;
+    color:#444;
     font-weight:500;
     transition:.3s;
 }
 
 .nav-links a:hover{
-    color:#2563eb;
+    color:#2563EB;
 }
 
 .hamburger{
@@ -60,75 +71,50 @@ header{
     cursor:pointer;
 }
 
-/*MOBILE NAV*/
-@media(max-width:768px){
-
-    .nav-links{
-        position:absolute;
-        top:80px;
-        left:0;
-        width:100%;
-        flex-direction:column;
-        align-items:center;
-        background:white;
-        display:none;
-        padding:20px 0;
-        box-shadow:0 15px 25px rgba(0,0,0,.1);
-    }
-
-    .nav-links.active{
-        display:flex;
-    }
-
-    .hamburger{
-        display:block;
-    }
-}
-
-/*HERO*/
+/* ==========================
+        HERO
+========================== */
 
 .hero{
+    padding:170px 20px 90px;
     text-align:center;
-    padding:120px 20px 60px;
     background:linear-gradient(135deg,#2563EB,#1E40AF);
     color:white;
 }
 
 .hero h1{
     font-size:3rem;
-    margin-bottom:15px;
+    margin-bottom:18px;
 }
 
 .hero p{
-    font-size:1.1rem;
-    max-width:700px;
+    max-width:750px;
     margin:auto;
     line-height:1.8;
+    font-size:1.1rem;
 }
 
-/*BLOCK LAYOUT*/
+/* ==========================
+      BLOG BLOCKS
+========================== */
 
 .block{
     display:flex;
     align-items:center;
     justify-content:space-between;
-    gap:50px;
-
-    padding:80px 10%;
-
-    background:white;
+    gap:60px;
+    padding:90px 10%;
 }
 
 .block:nth-child(even){
     background:#eef5ff;
 }
 
-/* reverse layout */
 .reverse{
     flex-direction:row-reverse;
 }
 
-/*IMAGE*/
+/* IMAGE */
 
 .image{
     flex:1;
@@ -136,133 +122,183 @@ header{
 
 .image img{
     width:100%;
-    border-radius:20px;
-    box-shadow:0 20px 40px rgba(0,0,0,0.15);
+    border-radius:18px;
+    display:block;
+    box-shadow:0 18px 35px rgba(0,0,0,.12);
 }
 
-/*CONTENT*/
+/* CONTENT */
 
 .content{
     flex:1;
 }
 
 .content h2{
-    font-size:2rem;
     color:#1E40AF;
-    margin-bottom:15px;
+    margin-bottom:18px;
+    font-size:2rem;
 }
 
 .content p{
-    font-size:1.05rem;
     line-height:1.9;
-    color:#444;
+    color:#555;
+    font-size:1.05rem;
 }
 
-
-/* ================= CONTACT CTA ================= */
+/* ==========================
+      CONTACT CTA
+========================== */
 
 .contact-cta{
-
-    text-align:center;
-
     padding:90px 20px;
-
-    background:linear-gradient(180deg,#f5f9ff,#ffffff);
-
-    position:relative;
-
+    text-align:center;
+    background:white;
 }
 
-/* heading */
+.line{
+    width:140px;
+    height:3px;
+    background:#2563EB;
+    margin:auto;
+    margin-bottom:25px;
+}
 
 .contact-cta h2{
-
-    font-size:2.2rem;
-
     color:#1E40AF;
-
-    margin-bottom:25px;
-
-    font-weight:700;
-
+    margin-bottom:30px;
+    font-size:2rem;
 }
-
-/* contact button */
 
 .contact-btn{
-
     display:inline-block;
-
     padding:15px 38px;
-
-    background:linear-gradient(135deg,#2563EB,#1E40AF);
-
-    color:white;
-
+    background:#FFD54A;
+    color:#1E3A8A;
     text-decoration:none;
-
-    font-size:1rem;
-
-    border-radius:12px;
-
-    font-weight:600;
-
-    box-shadow:0 18px 40px rgba(37,99,235,.25);
-
-    transition:0.35s ease;
-
-    position:relative;
-
-    overflow:hidden;
-
+    font-weight:bold;
+    border-radius:10px;
+    transition:.3s;
+    box-shadow:0 12px 25px rgba(255,213,74,.35);
 }
-
-/* hover effect */
 
 .contact-btn:hover{
-
-    transform:translateY(-5px);
-
-    box-shadow:0 25px 60px rgba(37,99,235,.35);
-
+    background:#FFC107;
+    transform:translateY(-4px);
 }
 
-/* shine effect */
+/* ==========================
+        FOOTER
+========================== */
 
-.contact-btn::before{
-
-    content:"";
-
-    position:absolute;
-
-    top:0;
-    left:-100%;
-
-    width:100%;
-    height:100%;
-
-    background:rgba(255,255,255,.25);
-
-    transform:skewX(-20deg);
-
-    transition:0.5s;
-
-}
-
-.contact-btn:hover::before{
-
-    left:120%;
-}
-
-/* FOOTER*/
 footer{
     background:#0f172a;
-    color:rgb(104, 104, 104);
+    color:white;
     text-align:center;
-    padding:50px 6%;
+    padding:40px 20px;
 }
 
-footer h2{
+footer p{
+    margin:10px 0;
+}
+
+/* ==========================
+      MOBILE NAVBAR
+========================== */
+
+@media(max-width:900px){
+
+.nav-links{
+    position:absolute;
+    top:80px;
+    left:0;
+    width:100%;
+    background:white;
+    flex-direction:column;
+    align-items:center;
+    gap:25px;
+    padding:30px 0;
+    display:none;
+    box-shadow:0 12px 25px rgba(0,0,0,.08);
+}
+
+.nav-links.active{
+    display:flex;
+}
+
+.hamburger{
+    display:block;
+}
+
+}
+
+/* ==========================
+      RESPONSIVE CONTENT
+========================== */
+
+@media(max-width:900px){
+
+.block,
+.reverse{
+    flex-direction:column;
+    text-align:center;
+    padding:70px 25px;
+}
+
+.image,
+.content{
+    width:100%;
+}
+
+.hero h1{
+    font-size:2.3rem;
+}
+
+.hero p{
+    font-size:1rem;
+}
+
+.content h2{
+    font-size:1.8rem;
+}
+
+}
+
+/* ==========================
+      SMALL DEVICES
+========================== */
+
+@media(max-width:600px){
+
+.navbar{
+    padding:0 5%;
+}
+
+.logo{
+    font-size:1.15rem;
+}
+
+.hero{
+    padding:150px 20px 70px;
+}
+
+.hero h1{
     font-size:2rem;
-    margin-bottom:15px;
+}
+
+.content h2{
+    font-size:1.5rem;
+}
+
+.content p{
+    font-size:.96rem;
+}
+
+.contact-cta h2{
+    font-size:1.7rem;
+}
+
+.contact-btn{
+    width:220px;
+}
+
 }

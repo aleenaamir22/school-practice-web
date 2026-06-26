@@ -67,7 +67,7 @@ header{
     justify-content:center;
     align-items:center;
     padding:100px 20px;
-    background:linear-gradient(135deg,#2563EB,#1E40AF);
+    background:white;
     position:relative;
     overflow:hidden;  
     
@@ -103,9 +103,10 @@ header{
 
 .about-card{
     max-width:850px;
-    background:rgba(255,255,255,.95);
+    background:rgba(24, 35, 154, 0.95);
     backdrop-filter:blur(15px);
-    border-radius:20px;
+    border-radius:14px;
+    border:2px solid gray;
     padding:50px;
     text-align:center;
     box-shadow:
@@ -117,7 +118,7 @@ header{
 
 /* Heading */
 .about-card h1{
-    color:#19338a;
+    color:#b9c5ed;
     font-size:2.3rem;
     margin-bottom:22px;
     font-weight:600;
@@ -125,7 +126,7 @@ header{
 
 /* Paragraph */
 .about-card p{
-    color:#677490;
+    color:#d9dce4;
     font-size:1.08rem;
     line-height:1.5;
 }

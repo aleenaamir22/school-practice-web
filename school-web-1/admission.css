@@ -147,3 +147,16 @@ button{
         width:90%;
     }
 }
+
+/* FOOTER*/
+footer{
+    background:#0f172a;
+    color:rgb(104, 104, 104);
+    text-align:center;
+    padding:50px 6%;
+}
+
+footer h2{
+    font-size:2rem;
+    margin-bottom:15px;
+}
